@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	- let n = 100
+	- for (let i=0; i<100; i++) 
+		li #{title[i].replace(/['"]+/g, '')}
+		p #{description[i].replace(/['"]+/g, '')}
+		li #{date[i].replace(/['"]+/g, '')}
+		- let n = 0
+		form(action='/vote', method='POST', value='t', name='vote', class="votes")
+			input(type='submit', value="#{description[i]}", name="w")
+			input(type='submit', value="#{description[i]}",name="a", onsubmit = "this.disabled = true")
+		li #{wi[i]} , #{ag[i]}
+		li #{rank[i]}
+		p -----------------------------------

@@ -1,0 +1,12 @@
+doctype html
+html
+	head
+	body
+		form(action='/input', method='POST')
+			p
+				|Title
+				input(type='text', name='title', value='')
+			p
+				input(type='text', name='thought', value='Write your thoughts...')
+				input(type='submit', value='post')
+
